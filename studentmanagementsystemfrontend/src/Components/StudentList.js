@@ -1,27 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
-import Student from './components/Student';
-import StudentList from './components/StudentList';
+import React from "react";
+import { Card, Container, Table } from "react-bootstrap";
 
-function App() {
+export default function StudentList() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-      <Student/>
-      <StudentList/>
+    <div className="my-3">
+      <Container>
+        <Card.Header><h3>Students List</h3></Card.Header>
+        <Card.Body>
+          <Table striped bordered hover>
+            <thead>
+              <tr>
+                <th>Student Id</th>
+                <th>Student Name</th>
+                <th>Student Address</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Mark</td>
+                <td>Otto</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Jacob</td>
+                <td>Thornton</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td colSpan={2}>Larry the Bird</td>
+              </tr>
+            </tbody>
+          </Table>
+        </Card.Body>
+      </Container>
     </div>
   );
 }
